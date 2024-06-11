@@ -1,12 +1,12 @@
-
+// src/redux/store.js
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import authReducer from './authSlice';
-
+import mailReducer from './mailReducer';
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  mail: mailReducer,
 });
-
 
 const loadState = () => {
   try {
@@ -25,11 +25,11 @@ const saveState = (state) => {
     const serializedState = JSON.stringify(state);
     localStorage.setItem('appState', serializedState); 
   } catch (err) {
+    // Handle write errors if necessary
   }
 };
 
 const preloadedState = loadState();
-
 
 const store = configureStore({
   reducer: rootReducer,

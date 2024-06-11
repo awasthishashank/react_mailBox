@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AuthForm from './components/Auth/AuthForm'
 import Header from "./components/Header";
 import Welcome from "./components/Welcome";
+import MailForm from "./components/MailForm";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <Switch>
           <Route path="/" component={AuthForm} exact />
           <Route path="/welcome" component={Welcome} exact />
+          <Route path="/mail" component={MailForm} exact />
         </Switch>
       </Router>
   );

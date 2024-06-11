@@ -99,7 +99,7 @@ const AuthForm = () => {
 
       const data = await response.json();
       dispatch(authActions.login(data.idToken));
-      history.replace('/welcome');
+      history.replace('/mail');
     } catch (err) {
       setError(err.message);
     } finally {
